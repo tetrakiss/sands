@@ -45,12 +45,12 @@ class BayerController extends Controller
         try{
             Bayer::create($request->post());
             return response()->json([
-                'message'=>'Product Created Successfully!!'
+                'message'=>'Новый баер успешно добавлен'
             ]);
         }catch(\Exception $e){
             \Log::error($e->getMessage());
             return response()->json([
-                'message'=>'Something goes wrong while creating a product!!'
+                'error'=>'Произошла ошибка при добавлении'
             ],500);
         }
         
