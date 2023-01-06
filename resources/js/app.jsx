@@ -1,9 +1,18 @@
 import './bootstrap';
 
 import React from 'react';
-import ReactDOM  from 'react-dom';
+import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './components/App';
 
-if (document.getElementById('app')){
-    ReactDOM.render(<App />, document.getElementById('app'));
-}
+import { BrowserRouter } from 'react-router-dom'
+
+const container = document.getElementById('app');
+const root = createRoot(container); // createRoot(container!) if you use TypeScript
+root.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>
+
+);
+
